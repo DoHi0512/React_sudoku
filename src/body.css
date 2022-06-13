@@ -1,0 +1,27 @@
+table{
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    font-size: 30px;
+    border : 5px solid;
+    table-layout: fixed;
+}
+
+
+.clicked{
+    background-color: #D6F5FF;
+}
+.non_clicked{
+    background-color: white;
+}
+
+.boldLineBottom {
+    border-bottom: 3.5px solid;
+    border-bottom-color: black;
+}
+
+.boldLineTop {
+    border-right: 3.5px solid;
+    border-right-color: black;
+}
+
