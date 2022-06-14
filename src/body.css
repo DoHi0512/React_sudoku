@@ -4,9 +4,11 @@ table{
     height: 500px;
     font-size: 30px;
     border : 5px solid;
-    table-layout: fixed;
 }
-
+.showHint{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
 .clicked{
     background-color: #D6F5FF;

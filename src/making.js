@@ -1,48 +1,68 @@
-let arr = [];
-let nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-let row = [[], [], [], [], [], [], [], [], [], []];
-let col = [[], [], [], [], [], [], [], [], [], []];
-let square = [[], [], [], [], [], [], [], [], [], []];
-for (let i = 0; i < 10; i++) {
-  row[i].push(nums);
-  col[i].push(nums);
-  square[i].push(nums);
-}
-function sqr(x, y) {
-  return Math.floor(x / 3) * 3 + Math.floor(y / 3);
-}
-function assignNum(x, y) {
-  let num = Math.floor(Math.random() * 9) + 1;
-  if (
-    col[y][num] === undefined &&
-    row[x][num] === undefined &&
-    square[sqr(x, y)][num] === undefined
-  ) {
-    col[y][num] = 1;
-    row[x][num] = 1;
-    square[sqr(x, y)][num] = 1;
-    return num;
-  }
-  return 0;
-}
-
+let questions = [];
+let q1 = [
+  [1, 3, 5, 4, 6, 9, 2, 7, 8],
+  [7, 8, 2, 1, 3, 5, 6, 4, 9],
+  [4, 6, 9, 2, 7, 8, 1, 3, 5],
+  [3, 2, 1, 5, 4, 6, 8, 9, 7],
+  [8, 7, 4, 9, 1, 3, 5, 2, 6],
+  [5, 9, 6, 8, 2, 7, 4, 1, 3],
+  [9, 1, 7, 6, 5, 2, 3, 8, 4],
+  [6, 4, 3, 7, 8, 1, 9, 5, 2],
+  [2, 5, 8, 3, 9, 4, 7, 6, 1],
+];
+let q2 = [
+  [2, 1, 5, 9, 6, 4, 3, 8, 7],
+  [8, 3, 9, 2, 1, 7, 4, 5, 6],
+  [6, 4, 7, 5, 8, 3, 2, 1, 9],
+  [9, 7, 1, 6, 4, 5, 8, 2, 3],
+  [3, 6, 2, 1, 7, 8, 9, 4, 5],
+  [4, 5, 8, 3, 2, 9, 6, 7, 1],
+  [1, 9, 3, 8, 5, 2, 7, 6, 4],
+  [7, 2, 6, 4, 9, 1, 5, 3, 8],
+  [5, 8, 4, 7, 3, 6, 1, 9, 2],
+];
+let q3 = [
+  [4, 8, 1, 6, 7, 5, 2, 9, 3],
+  [7, 3, 6, 8, 2, 9, 5, 4, 1],
+  [5, 2, 9, 4, 3, 1, 8, 7, 6],
+  [9, 5, 3, 1, 8, 7, 6, 2, 4],
+  [2, 4, 7, 5, 6, 3, 1, 8, 9],
+  [6, 1, 8, 9, 4, 2, 3, 5, 7],
+  [3, 7, 5, 2, 9, 6, 4, 1, 8],
+  [1, 6, 4, 7, 5, 8, 9, 3, 2],
+  [8, 9, 2, 3, 1, 4, 7, 6, 5],
+];
+let q4 = [
+  [5, 3, 4, 6, 7, 8, 9, 1, 2],
+  [6, 7, 2, 1, 9, 5, 3, 4, 8],
+  [1, 9, 8, 3, 4, 2, 5, 6, 7],
+  [8, 5, 9, 7, 6, 1, 4, 2, 3],
+  [4, 2, 6, 8, 5, 3, 7, 9, 1],
+  [7, 1, 3, 9, 2, 4, 8, 5, 6],
+  [9, 6, 1, 5, 3, 7, 2, 8, 4],
+  [2, 8, 7, 4, 1, 9, 6, 3, 5],
+  [3, 4, 5, 2, 8, 6, 1, 7, 9],
+];
+questions.push(q1);
+questions.push(q2);
+questions.push(q3);
+questions.push(q4);
+let prob = 2;
 function Making() {
   let arr = [];
-  let temp = [];
+  let randIdx = Math.floor(Math.random() * 4);
   for (let i = 0; i < 9; i++) {
     let temp = [];
     for (let j = 0; j < 9; j++) {
-      let data = assignNum(j, i);
+      let randProb = Math.floor(Math.random() * 6);
       temp.push({
         idx: [i, j],
-        value: data,
-        isBlank: data === 0 ? true : false,
+        value: randProb < prob ? 0 : questions[randIdx][i][j],
+        isBlank: randProb < prob ? true : false,
       });
     }
-
     arr.push(temp);
   }
-  console.log(arr);
-  return arr;
+  return [arr, questions[randIdx]];
 }
 export default Making;
