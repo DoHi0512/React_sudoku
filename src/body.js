@@ -6,8 +6,8 @@ let btnNum = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //버튼의 고유 값
 let maked = Making();
 let numArray = maked[0]; //스도쿠 판
 let ansArray = maked[1]; //스도쿠 정답
-let startTime = new Date().getTime();
-let endTime = new Date().getTime();
+let startTime = new Date().getTime(); //시작 시간
+let endTime = new Date().getTime(); // 종료 시간
 function Body(props) {
   const [hintCnt,setHintCnt] = useState(3);
   const [chg, setChg] = useState(true);
