@@ -8,7 +8,7 @@ let numArray = maked[0]; //스도쿠 판
 let ansArray = maked[1]; //스도쿠 정답
 let startTime = new Date().getTime(); //시작 시간
 let endTime = new Date().getTime(); // 종료 시간
-function Body(props) {
+function Body() {
   const [hintCnt,setHintCnt] = useState(3);
   const [chg, setChg] = useState(true);
   const [sdkIdx, setSdkIdx] = useState([-1, -1]);
@@ -91,7 +91,6 @@ function Body(props) {
           <Tables currentIdx={sdkIdx} sdkBlocks={numArray} select={select} />
         </table>
       </div>
-      <h1>{props.ans}</h1>
     </div>
   );
 }
