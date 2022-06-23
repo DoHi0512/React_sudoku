@@ -47,7 +47,7 @@ questions.push(q1);
 questions.push(q2);
 questions.push(q3);
 questions.push(q4);
-let prob = 3;
+let prob = 2;
 function Making() {
   let arr = [];
   let randIdx = Math.floor(Math.random() * 4);
