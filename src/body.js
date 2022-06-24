@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, {useState} from "react";
 import "./body.css";
 import Tables from "./tables";
 import Making from "./making";
 let btnNum = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //버튼의 고유 값
-let maked = Making();
+let dif = 2;
+let maked = Making(dif);
 let numArray = maked[0]; //스도쿠 판
 let ansArray = maked[1]; //스도쿠 정답
 let startTime = new Date().getTime(); //시작 시간
@@ -24,9 +25,10 @@ function Body() {
     setChg((prev) => !prev);
   }
   function startGame() {
+    console.log(dif);
     setHintCnt(3);
     startTime = new Date().getTime();
-    maked = Making();
+    maked = Making(dif);
     numArray = maked[0];
     ansArray = maked[1];
     setChg((prev) => !prev);
@@ -84,6 +86,11 @@ function Body() {
         <button className="header_hintButton" onClick={hint}>
           힌트
         </button>
+      </div>
+      <div className="diff">
+        <button onClick={() => dif = 2}>쉬움</button>
+        <button onClick={() => dif = 3}>보통</button>
+        <button onClick={() => dif = 4}>어려움</button>
       </div>
       <div className="num_button">
         {buttons}

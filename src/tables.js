@@ -11,12 +11,12 @@ function Tables(props) {
                 ? "clicked "
                 : "non_clicked "
             }${
-              (dat2.idx[0] + 1) % 3 == 0 && dat2.idx[0] + 1 !== 9
+              (dat2.idx[0] + 1) % 3 === 0 && dat2.idx[0] + 1 !== 9
                 ? "boldLineBottom "
                 : ""
             }
             ${
-              (dat2.idx[1] + 1) % 3 == 0 && dat2.idx[1] + 1 !== 9
+              (dat2.idx[1] + 1) % 3 === 0 && dat2.idx[1] + 1 !== 9
                 ? "boldLineTop "
                 : ""
             }

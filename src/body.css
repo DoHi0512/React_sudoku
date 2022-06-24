@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
 table{
+    font-family: 'Gamja Flower', cursive;
     margin: auto;
     width: 500px;
     height: 500px;
@@ -35,6 +37,15 @@ table{
     padding: 10px;
 }
 button{
+    font-family: 'Gamja Flower', cursive;
     width: 50px;
     height:50px;
+    font-size: 20px;
+}
+button:hover{  
+    background-color:#c9ffc9;
+}
+.diff button{
+    white-space: nowrap;
+    text-align: center;
 }
