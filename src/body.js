@@ -73,6 +73,17 @@ function Body() {
     numArray[sdkIdx[0]][sdkIdx[1]].value = ansArray[sdkIdx[0]][sdkIdx[1]];
     setChg((prev) => !prev);
   }
+  function test_showAns() {
+    let admin = prompt("관리자 비밀번호 입력");
+    if (admin === "0512") {
+      for (let i = 0; i < 9; i++) {
+        for (let j = 0; j < 9; j++) {
+          numArray[i][j].value = ansArray[i][j];
+        }
+      }
+      setChg((prev) => !prev);
+    } else alert("비밀번호가 틀렸습니다");
+  }
   return (
     <div className="body">
       <h1 className="showHint">
@@ -85,6 +96,7 @@ function Body() {
         <button onClick={() => startGame(4)}>어려움</button>
         <button onClick={endGame}>종료</button>
         <button onClick={hint}>힌트</button>
+        <button onClick={test_showAns}>테스트용 정답버튼</button>
       </div>
 
       <div className="num_button">

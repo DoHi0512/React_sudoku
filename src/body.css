@@ -3,8 +3,6 @@ table{
     table-layout: fixed;
     font-family: 'Gamja Flower', cursive;
     margin: auto;
-    width: 500px;
-    height: 500px;
     font-size: 30px;
     border : 5px solid;
 }
@@ -15,9 +13,13 @@ table{
 
 .clicked{
     background-color: #D6F5FF;
+    width: 50px;
+    height: 50px;
 }
 .non_clicked{
     background-color: white;
+    width: 50px;
+    height: 50px;
 }
 
 .boldLineBottom {
@@ -45,11 +47,14 @@ table{
 button{
     font-family: 'Gamja Flower', cursive;
     font-size: 20px;
+    background-color: #b8ffee;
 }
 button:hover{  
     background-color:#c9ffc9;
 }
 .diff button{
-    margin-right: 0px;
-    
+    margin-right: 0px;   
+}
+.body{
+    background-color: #fcdfb3;
 }

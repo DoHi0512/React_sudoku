@@ -43,13 +43,25 @@ const q4 = [
   [2, 8, 7, 4, 1, 9, 6, 3, 5],
   [3, 4, 5, 2, 8, 6, 1, 7, 9],
 ];
+const q5 = [
+  [8, 3, 9, 6, 5, 7, 2, 1, 4],
+  [6, 7, 2, 9, 4, 1, 5, 8, 3],
+  [1, 5, 4, 8, 3, 2, 9, 6, 7],
+  [5, 4, 1, 2, 8, 3, 7, 9, 6],
+  [2, 8, 7, 4, 9, 6, 3, 5, 1],
+  [9, 6, 3, 7, 1, 5, 4, 2, 8],
+  [7, 1, 8, 3, 2, 9, 6, 4, 5],
+  [3, 2, 5, 1, 6, 4, 8, 7, 9],
+  [4, 9, 6, 5, 7, 8, 1, 3, 2],
+];
 questions.push(q1);
 questions.push(q2);
 questions.push(q3);
 questions.push(q4);
+questions.push(q5);
 function Making(prob) {
   let arr = [];
-  let randIdx = Math.floor(Math.random() * 4);
+  let randIdx = Math.floor(Math.random() * 5);
   for (let i = 0; i < 9; i++) {
     let temp = [];
     for (let j = 0; j < 9; j++) {
