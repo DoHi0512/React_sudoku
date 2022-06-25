@@ -23,7 +23,7 @@ function Tables(props) {
               `}
             onClick={() => props.select(dat2.idx)}
           >
-            {dat2.value === 0 ? "" : dat2.value}
+            {dat2.value === 0 ? " " : dat2.value}
           </td>
         );
       })}{" "}

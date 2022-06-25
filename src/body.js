@@ -1,16 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./body.css";
 import Tables from "./tables";
 import Making from "./making";
 let btnNum = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //버튼의 고유 값
-let dif = 2;
+let dif = 3;
 let maked = Making(dif);
 let numArray = maked[0]; //스도쿠 판
 let ansArray = maked[1]; //스도쿠 정답
 let startTime = new Date().getTime(); //시작 시간
 let endTime = new Date().getTime(); // 종료 시간
 function Body() {
-  const [hintCnt,setHintCnt] = useState(3);
+  const [hintCnt, setHintCnt] = useState(3);
   const [chg, setChg] = useState(true);
   const [sdkIdx, setSdkIdx] = useState([-1, -1]);
   const buttons = btnNum.map((num) => {
@@ -24,8 +24,8 @@ function Body() {
         : num;
     setChg((prev) => !prev);
   }
-  function startGame() {
-    console.log(dif);
+  function startGame(n) {
+    dif = n;
     setHintCnt(3);
     startTime = new Date().getTime();
     maked = Making(dif);
@@ -65,33 +65,28 @@ function Body() {
     });
   }
   function hint() {
-    if(hintCnt === 0){
+    if (hintCnt === 0) {
       alert("힌트 사용 불가!");
       return;
     }
-    setHintCnt(prev => prev - 1);
+    setHintCnt((prev) => prev - 1);
     numArray[sdkIdx[0]][sdkIdx[1]].value = ansArray[sdkIdx[0]][sdkIdx[1]];
     setChg((prev) => !prev);
   }
   return (
     <div className="body">
-      <h1 className="showHint">남은 힌트 개수 {hintCnt}</h1>
+      <h1 className="showHint">
+        남은 힌트 개수 {hintCnt} / 현재 난이도{" "}
+        {dif === 2 ? "쉬움" : dif === 3 ? "보통" : "어려움"}
+      </h1>
       <div className="header_button">
-        <button className="header_startButton" onClick={startGame}>
-          시작
-        </button>
-        <button className="header_restartButton" onClick={endGame}>
-          종료
-        </button>
-        <button className="header_hintButton" onClick={hint}>
-          힌트
-        </button>
+        <button onClick={() => startGame(2)}>쉬움</button>
+        <button onClick={() => startGame(3)}>보통</button>
+        <button onClick={() => startGame(4)}>어려움</button>
+        <button onClick={endGame}>종료</button>
+        <button onClick={hint}>힌트</button>
       </div>
-      <div className="diff">
-        <button onClick={() => dif = 2}>쉬움</button>
-        <button onClick={() => dif = 3}>보통</button>
-        <button onClick={() => dif = 4}>어려움</button>
-      </div>
+
       <div className="num_button">
         {buttons}
         <table border="1">
