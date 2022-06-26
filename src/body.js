@@ -87,7 +87,7 @@ function Body() {
   return (
     <div className="body">
       <h1 className="showHint">
-        남은 힌트 개수 {hintCnt} / 현재 난이도{" "}
+        남은 힌트 개수 {hintCnt} / 현재 난이도 : {" "}
         {dif === 2 ? "쉬움" : dif === 3 ? "보통" : "어려움"}
       </h1>
       <div className="header_button">
