@@ -47,14 +47,10 @@ table{
 button{
     font-family: 'Gamja Flower', cursive;
     font-size: 20px;
-    background-color: #b8ffee;
-}
-button:hover{  
-    background-color:#c9ffc9;
 }
 .diff button{
     margin-right: 0px;   
 }
 .body{
-    background-color: #fcdfb3;
+    background-color: #e1f5fe;
 }
